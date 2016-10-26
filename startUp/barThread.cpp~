@@ -1,0 +1,20 @@
+#include "rxdata.h"
+#include "startUpFrm.h"
+
+void BarThread::run()
+{
+	i = 0;
+	while( StartUp::percent < 100)
+	{
+		if( StartUp::percent > i )
+		{
+			i++;
+			pin->setValue( i );
+			//usleep(1000);
+		}
+		else
+		{
+			pin->setValue( StartUp::percent );
+		}
+	}
+}

@@ -1,0 +1,15 @@
+#ifndef LINLONG_PTH_BarThread
+#define LINLONG_PTH_BarThread
+
+#include <QThread>
+#include <QProgressBar>
+
+class BarThread : public QThread
+{
+	Q_OBJECT
+public:
+	virtual void run();
+	QProgressBar *pin;
+};
+
+#endif
