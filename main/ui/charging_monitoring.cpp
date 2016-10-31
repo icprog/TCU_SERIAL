@@ -127,7 +127,7 @@ void Charging_monitoring::slot_timer()
         myerr_sigals.SetValue(TCU_ERR_STAGE_START);
         ui->label_inf->setText("启动充电失败");
         //QMessageBox::critical(NULL, "Error", "启动充电失败");
-        tst_timer.stop();
+        //tst_timer.stop();
     }
 
     if(task->tcu_err_stage == TCU_ERR_STAGE_STOP_STATUS)
@@ -135,7 +135,7 @@ void Charging_monitoring::slot_timer()
         myerr_sigals.SetValue(TCU_ERR_STAGE_STOP_STATUS);
         ui->label_inf->setText("停止充电失败");
         //QMessageBox::critical(NULL, "Error", "停止充电失败");
-        tst_timer.stop();
+        //tst_timer.stop();
     }
 
 }

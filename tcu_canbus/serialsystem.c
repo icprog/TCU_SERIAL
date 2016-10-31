@@ -150,6 +150,8 @@ void tcu_canstop()
     }
 
     memset(task,0,sizeof(task));
+    //Hachiko_kill(task.can_heart_beat);
+    //memset(task, 0, sizeof(struct charge_task));
 
 //    res = pthread_cancel(tid_control);
 //    printf("5555555555555\n");

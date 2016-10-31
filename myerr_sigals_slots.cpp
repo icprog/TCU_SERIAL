@@ -48,7 +48,7 @@ void myerr_sigals_slots::ChangeValue(int value)
             task->tcu_tmp_stage = TCU_STAGE_ANY;
             break;
         case TCU_ERR_STAGE_PARAMETER:
-            msgBox.critical(NULL, "Error", "充电参数不匹配");
+            //msgBox.critical(NULL, "Error", "充电参数不匹配");
             Message::static_msg->setWindowTitle("Error");
             Message::_show(tr("充电参数不匹配"));
             task->tcu_stage = TCU_STAGE_ANY;
@@ -59,13 +59,15 @@ void myerr_sigals_slots::ChangeValue(int value)
         case TCU_ERR_STAGE_WAITSTART:
             break;
         case TCU_ERR_STAGE_START:
-            msgBox.critical(NULL, "Error", "启动充电失败");
-            Message::static_msg->setWindowTitle("Error");
-            Message::_show(tr("启动充电失败"));
+            //msgBox.critical(NULL, "Error", "启动充电失败");
+            //Message::static_msg->setWindowTitle("Error");
+            //Message::_show(tr("启动充电失败"));
             task->tcu_stage = TCU_STAGE_ANY;
             task->tcu_tmp_stage = TCU_STAGE_ANY;
             err_settlement_inf = new settlement_inf;
             err_settlement_inf->show();
+            Message::static_msg->setWindowTitle("Error");
+            Message::_show(tr("启动充电失败"));
             break;
         case TCU_ERR_STAGE_STARTING:
             break;
@@ -76,13 +78,16 @@ void myerr_sigals_slots::ChangeValue(int value)
         case TCU_ERR_STAGE_STOP:
             break;
         case TCU_ERR_STAGE_STOP_STATUS:
-            msgBox.critical(NULL, "Error", "停止充电失败");
-            Message::static_msg->setWindowTitle("Error");
-            Message::_show(tr("停止充电失败"));
+            //msgBox.critical(NULL, "Error", "停止充电失败");
+            //Message::static_msg->setWindowTitle("Error");
+            //Message::_show(tr("停止充电失败"));
             task->tcu_stage = TCU_STAGE_ANY;
             task->tcu_tmp_stage = TCU_STAGE_ANY;
+            //bug
             err_settlement_inf = new settlement_inf;
             err_settlement_inf->show();
+            Message::static_msg->setWindowTitle("Error");
+            Message::_show(tr("停止充电失败"));
             break;
         case TCU_ERR_STAGE_STOP_END:
             break;

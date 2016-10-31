@@ -68,7 +68,8 @@ void Message::setText(QString str)
 
 void Message::display()
 {
-    if(task->tcu_err_stage == TCU_ERR_STAGE_INVALID || task->tcu_err_stage == TCU_ERR_STAGE_TIMEOUT){
+    if(task->tcu_err_stage == TCU_ERR_STAGE_INVALID || task->tcu_err_stage == TCU_ERR_STAGE_TIMEOUT
+            || task->tcu_err_stage == TCU_STAGE_ANY){
         pbt_retry->setVisible(false);
         pbt_cancel->setVisible(false);
     }else{
